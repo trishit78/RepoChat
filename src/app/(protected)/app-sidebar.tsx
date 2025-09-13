@@ -48,11 +48,7 @@ const items = [
     icon: CreditCard,
   },
 ];
-// const projects = [
-//   { name: "Project1" },
-//   { name: "Project2" },
-//   { name: "Project3" },
-// ];
+
 
 export function AppSidebar() {
   const pathName = usePathname();
