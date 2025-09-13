@@ -7,6 +7,11 @@ import { api } from "@/trpc/react";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
+import Image from "next/image";
+//import fallback from '../../../public/hoto.jpeg'
+import fallback from '../../../../public/hoto.jpeg'
+
+
 
 type FormInput = {
   repoUrl: string;
@@ -44,7 +49,7 @@ const refetch = useRefetch();
 
   return (
     <div className="flex h-full items-center justify-center gap-12">
-      <img src="" className="h-56 w-auto" alt="" />
+      <Image src={fallback} className="h-56 w-auto" alt="" />
       <div>
         <div>
           <h1 className="text-2xl font-semibold">Link ur github .........................................</h1>

@@ -1,13 +1,28 @@
 "use client";
 
 import useProject from "@/hooks/use-project";
+import { pollCommits } from "@/lib/github";
 import { ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-const Dashboard = () => {
+
+export default  function Dashboard() {
+
   const { project } = useProject();
+
+  //console.log('project id is',project?.id)   //cmfhwcb410003tvzogzijhi7j
+const [commits, setCommits] = useState([]);
+
+  useEffect(() => {
+    fetch("/api/commits/cmfhwcb410003tvzogzijhi7j")
+      .then(res => res.json())
+      .then(setCommits);
+  }, []);
+
+
+  console.log(commits)
   return (
     <div>
       <div className="flex flex-wrap items-center justify-between gap-y-4">
@@ -55,5 +70,3 @@ const Dashboard = () => {
     </div>
   );
 };
-
-export default Dashboard;

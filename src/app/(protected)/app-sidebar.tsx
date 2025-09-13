@@ -25,7 +25,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
+import fallback from '../../../public/hoto.jpeg'
 const items = [
   {
     title: "Dashboard",
@@ -58,12 +58,12 @@ export function AppSidebar() {
   const pathName = usePathname();
   const open = useSidebar();
   const {projects,projectId,setProjectId} = useProject();
-  console.log(open);
+  //console.log(open);
   return (
     <Sidebar collapsible="icon" variant="floating">
       <SidebarHeader>
         <div className="flex items-center gap-2">
-          <Image src="" alt="" width={40} height={40} />
+          <Image src={fallback} alt="" width={40} height={40} />
           {open.open && (
             <h1 className="text-primary/80 text-xl font-bold">RepoChat</h1>
           )}
