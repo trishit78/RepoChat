@@ -1,14 +1,14 @@
 "use client";
 
 import useProject from "@/hooks/use-project";
-import { pollCommits } from "@/lib/github";
+
 import { ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
 
 import React, { useEffect, useState } from "react";
 
 
-export default  function Dashboard() {
+export default function Dashboard() {
 
   const { project } = useProject();
 
@@ -22,7 +22,7 @@ const [commits, setCommits] = useState([]);
   }, []);
 
 
-  console.log(commits)
+
   return (
     <div>
       <div className="flex flex-wrap items-center justify-between gap-y-4">
