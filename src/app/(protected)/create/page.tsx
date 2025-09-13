@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import useRefetch from "@/hooks/use-refetch";
-import { api } from "@/trpc/react";
+
 
 import React from "react";
 import { useForm } from "react-hook-form";
@@ -10,6 +10,8 @@ import { toast } from "sonner";
 import Image from "next/image";
 //import fallback from '../../../public/hoto.jpeg'
 import fallback from '../../../../public/hoto.jpeg'
+import { api } from "@/trpc/react";
+
 
 
 
@@ -21,7 +23,7 @@ type FormInput = {
 
 const CreatePage = () => {
   const { register, handleSubmit, reset } = useForm<FormInput>();
-const createProject = api.project.createProject.useMutation();
+const createProject = api.project.createProject.useMutation()
 
 const refetch = useRefetch();
 

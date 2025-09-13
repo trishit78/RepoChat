@@ -80,7 +80,7 @@ async function summarizeCommit(githubUrl:string,commitHash:string){
             'Accept':'application/vnd.github.v3.diff',
         }
     });
-    console.log('data is',data)
+    //console.log('data is',data)
     return await aiSummarizeCommit(data)|| 'No significant changes';
 
 }
