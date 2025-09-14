@@ -69,6 +69,6 @@ export async function generateEmbedding(summary:string){
     });
     const res = await model.embedContent(summary);
     const embedding = res.embedding;
-    return embedding;
+    return embedding.values;
 }
 
