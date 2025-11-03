@@ -9,7 +9,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import Image from "next/image";
 //import fallback from '../../../public/hoto.jpeg'
-import fallback from '../../../../public/hoto.jpeg'
+// import fallback from '../../../../public/hoto.jpeg'
 import { api } from "@/trpc/react";
 
 
@@ -51,7 +51,7 @@ const refetch = useRefetch();
 
   return (
     <div className="flex h-full items-center justify-center gap-12">
-      <Image src={fallback} className="h-56 w-auto" alt="" />
+      <Image src="/hoto.jpeg" width={400} height={224} className="h-56 w-auto" alt="" />
       <div>
         <div>
           <h1 className="text-2xl font-semibold">Link ur github .........................................</h1>
