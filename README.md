@@ -109,7 +109,37 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## 📁 Project Structure
+##  Running with Docker
+
+If you prefer to run the database and app in Docker for development, this repository includes a simple `docker-compose.yml` and `Dockerfile` to get you started.
+
+Quick steps (PowerShell on Windows):
+
+1. Copy your env file and fill in secrets (do not commit it):
+
+```powershell
+Copy-Item .env.example .env
+# Edit .env and replace tokens/keys with your local secrets
+```
+
+2. Start Postgres and the app (start only `db` and `app` to save memory):
+
+```powershell
+# Start DB and app
+docker-compose up -d --build db app
+
+# (Optional) start everything including pgAdmin
+docker-compose up -d --build
+```
+
+3. Follow logs:
+
+```powershell
+docker-compose logs -f app
+docker-compose logs -f db
+```
+
+## �📁 Project Structure
 
 ```
 src/
